@@ -14,6 +14,16 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+          },
+          {
+            path: 'new-note/:listaId',
+            children: [
+              {
+                path: '',
+                loadChildren: () =>
+                  import('../new-note/new-note.module').then(m => m.NewNotePageModule)
+              }
+            ]
           }
         ]
       },
@@ -24,6 +34,16 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+          },
+          {
+            path: 'new-note/:listaId',
+            children: [
+              {
+                path: '',
+                loadChildren: () =>
+                  import('../new-note/new-note.module').then(m => m.NewNotePageModule)
+              }
+            ]
           }
         ]
       },
